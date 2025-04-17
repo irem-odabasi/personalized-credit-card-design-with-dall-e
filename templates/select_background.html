@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Your Card Background</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Select Your Card Background</h1>
+        <form action="/select_background" method="POST">
+            <div class="background-options">
+                {% for url in background_urls %}
+                    <label class="background-option">
+                        <input type="radio" name="selected_background" value="{{ url }}" required>
+                        <img src="{{ url }}" alt="Generated Background">
+                    </label>
+                {% endfor %}
+            </div>
+            <button type="submit">Continue</button>
+        </form>
+    </div>
+</body>
+</html>

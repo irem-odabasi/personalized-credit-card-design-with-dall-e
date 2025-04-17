@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Card Design</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Personalized Credit Card Design</h1>
+        <form action="/generate_options" method="POST">
+            <label for="artist">Favorite Artist:</label>
+            <input type="text" id="artist" name="artist" placeholder="e.g., Vincent van Gogh" required>
+
+            <label for="style">Art Style:</label>
+            <input type="text" id="style" name="style" placeholder="e.g., Abstract" required>
+
+            <button type="submit">Generate Designs</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,241 @@
+/* 🌍 Genel Ayarlar */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(120deg, #e1f5fe, #f3f2f1);
+    color: #323130;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* 🔄 Animasyonlar */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes hoverGlow {
+    from { box-shadow: 0 0 8px rgba(0, 120, 212, 0.2); }
+    to { box-shadow: 0 0 20px rgba(0, 120, 212, 0.5); }
+}
+
+/* 📌 Kapsayıcı */
+.container {
+    text-align: center;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1.5s ease;
+    max-width: 600px;
+    width: 90%;
+}
+
+/* 🏷 Başlık */
+h1 {
+    color: #0078d4;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* 📜 Açıklama Metni */
+p {
+    color: #605e5c;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* 📄 Form */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #323130;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input {
+    margin: 10px 0;
+    padding: 12px;
+    width: 100%;
+    max-width: 350px;
+    border: 1px solid #d0d0d0;
+    border-radius: 8px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: #0078d4;
+    box-shadow: 0 0 6px rgba(0, 120, 212, 0.5);
+}
+
+/* 🎨 Kredi Kartı Seçim Ekranı (select_background.html) */
+.background-options {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Kartlar arasında boşluk */
+    flex-wrap: wrap;
+    margin-top: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.background-option {
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.background-option input {
+    display: none;
+}
+
+.background-option img {
+    width: 220px; /* **Standart Kart Genişliği** */
+    height: 140px; /* **Standart Kart Yüksekliği** */
+    object-fit: cover;
+    border-radius: 12px;
+    border: 4px solid transparent;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Seçilen arka plan vurgulansın */
+.background-option input:checked + img {
+    border-color: #0078d4;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 120, 212, 0.5);
+}
+
+/* Hover Efekti (Fareyle Üzerine Gelince) */
+.background-option img:hover {
+    transform: scale(1.03);
+    border-color: rgba(0, 120, 212, 0.6);
+}
+
+/* 🎨 Kredi Kartı Önizleme ve Bilgi Girişi (card_details.html) */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.credit-card {
+    position: relative;
+    width: 360px;
+    height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.credit-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* 📌 Kart üzerindeki bilgiler */
+.card-details {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.card-number {
+    font-size: 1.4rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+}
+
+.card-expiry {
+    font-size: 1rem;
+    font-weight: bold;
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+}
+
+.card-holder {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+}
+
+/* 🎉 Final Kart Tasarımı (result.html) */
+.card-preview {
+    max-width: 360px;
+    width: 100%;
+    text-align: center;
+}
+
+/* 📥 Download Butonu */
+.btn-download {
+    background: linear-gradient(90deg, #28a745, #1e7e34);
+    padding: 12px 24px;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.btn-download:hover {
+    background: linear-gradient(90deg, #1e7e34, #155d27);
+    transform: translateY(-2px);
+    animation: hoverGlow 0.6s infinite alternate;
+}
+
+/* 🔘 Butonlar */
+button, .btn {
+    padding: 14px 28px;
+    background: linear-gradient(90deg, #0078d4, #005a9e);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover, .btn:hover {
+    background: linear-gradient(90deg, #005a9e, #004080);
+    transform: translateY(-2px);
+    animation: hoverGlow 0.6s infinite alternate;
+}

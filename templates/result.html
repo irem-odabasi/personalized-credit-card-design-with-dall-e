@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Credit Card Design</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Your Final Card</h1>
+        <p>Here is your final personalized card design:</p>
+
+        <div class="card-container">
+            <div class="card-preview">
+                <img src="{{ final_card_url }}" alt="Final Personalized Credit Card" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);">
+
+            </div>
+        </div>
+
+        <div class="actions">
+            <a href="/" class="btn">Generate Another Design</a>
+            <a href="{{ final_card_url }}" download="final_card.jpg" class="btn-download">Download</a>
+        </div>
+    </div>
+</body>
+</html>

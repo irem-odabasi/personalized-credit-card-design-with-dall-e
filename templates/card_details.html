@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>💳 Enter Your Card Details</h1>
+
+        <!-- Kart Görünümü -->
+        <div class="card-container">
+            <div class="credit-card">
+                <img src="{{ background_url }}" id="card-background" alt="Card Background">
+                <div class="card-details">
+                    <p class="card-number" id="preview-card-number">1234 5678 9012 3456</p>
+                    <p class="card-expiry" id="preview-expiry">EXP: 12/25</p>
+                    <p class="card-holder" id="preview-holder">YOUR NAME</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Kullanıcıdan Bilgi Alma Formu -->
+        <form action="/generate_final_card" method="POST">
+            <input type="hidden" name="background_url" value="{{ background_url }}">
+
+            <label for="cardholder_name">Cardholder Name:</label>
+            <input type="text" id="cardholder_name" name="cardholder_name" placeholder="John Doe" required oninput="updatePreview()">
+
+            <label for="card_number">Card Number:</label>
+            <input type="text" id="card_number" name="card_number" placeholder="1234 5678 9012 3456" maxlength="19" required oninput="updatePreview()">
+
+            <label for="expiry_date">Expiry Date:</label>
+            <input type="text" id="expiry_date" name="expiry_date" placeholder="12/25" maxlength="5" required oninput="updatePreview()">
+
+            <button type="submit">Generate Final Card</button>
+        </form>
+    </div>
+
+    <script>
+        function updatePreview() {
+            document.getElementById('preview-card-number').innerText = document.getElementById('card_number').value || '1234 5678 9012 3456';
+            document.getElementById('preview-expiry').innerText = "EXP: " + (document.getElementById('expiry_date').value || '12/25');
+            document.getElementById('preview-holder').innerText = document.getElementById('cardholder_name').value.toUpperCase() || 'YOUR NAME';
+        }
+    </script>
