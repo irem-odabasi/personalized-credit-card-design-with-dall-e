@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Final Credit Card Design</title>
+    <title>Your Final Card</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
@@ -12,9 +12,8 @@
         <p>Here is your final personalized card design:</p>
 
         <div class="card-container">
-            <div class="card-preview">
-                <img src="{{ final_card_url }}" alt="Final Personalized Credit Card" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);">
-
+            <div class="credit-card">
+                <img src="{{ final_card_url }}" alt="Final Personalized Credit Card">
             </div>
         </div>
 

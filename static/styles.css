@@ -175,14 +175,16 @@ input:focus {
     position: absolute;
     bottom: 60px;
     left: 20px;
+    color: white; /* Beyaz renk */
 }
 
 .card-expiry {
     font-size: 1rem;
     font-weight: bold;
     position: absolute;
-    bottom: 30px;
+    bottom: 35px;
     left: 20px;
+    color: white; /* Beyaz renk */
 }
 
 .card-holder {
@@ -190,8 +192,9 @@ input:focus {
     font-weight: bold;
     text-transform: uppercase;
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     left: 20px;
+    color: white; /* Beyaz renk */
 }
 
 /* 🎉 Final Kart Tasarımı (result.html) */
@@ -200,6 +203,9 @@ input:focus {
     width: 100%;
     text-align: center;
 }
+
+
+
 
 /* 📥 Download Butonu */
 .btn-download {
